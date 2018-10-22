@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CepExpress.Pages.CepExpressPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#FFBF00" Padding="30" Spacing="30">
+            <!-- Place new controls here -->
+            <Image Source="LogoCorreios.png"/>
+
+            <Entry Text="{Binding CEPBusca}" 
+                   Placeholder="Digite o cep" 
+                   PlaceholderColor="#FFBF00" 
+                   BackgroundColor="#FFFFFF"/>
+
+            <Button Text="BUSCAR CEP" 
+                    Command="{Binding BuscarCommand}"
+                    TextColor="#FFFFFF" 
+                    BackgroundColor="#00416B"/>
+
+            <ActivityIndicator IsVisible="{Binding IsBusy}"
+                               IsRunning="{Binding IsBusy}"/>
+
+            <StackLayout IsVisible="{Binding HasCep}">
+
+                <Label Text="Resultado:" 
+                       HorizontalOptions="Start"
+                       VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding Resultado}" 
+                       HorizontalOptions="Start"
+                       VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <Button Text="Adicionar" 
+                    IsVisible="{Binding HasCep}"
+                    Command="{Binding AdicionarCommand}"
+                    TextColor="#FFFFFF" 
+                    BackgroundColor="#00416B"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

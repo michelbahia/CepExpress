@@ -1,4 +1,4 @@
-﻿using System;
+﻿using CepExpress.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +11,7 @@ namespace CepExpress
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new CepsPage());
         }
 
         protected override void OnStart()

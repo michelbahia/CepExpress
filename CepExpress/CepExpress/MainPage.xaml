@@ -4,9 +4,13 @@
              xmlns:local="clr-namespace:CepExpress"
              x:Class="CepExpress.MainPage">
 
-    <StackLayout>
+    <StackLayout BackgroundColor="#FFBF00" Padding="30" Spacing="30">
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Image Source="LogoCorreios.png"/>
+        <Entry x:Name="Cep" Placeholder="Digite o cep" PlaceholderColor="#FFBF00" BackgroundColor="#FFFFFF"/>
+        <Button x:Name="BtnBuscarCep" Text="BUSCAR CEP" TextColor="#FFFFFF" BackgroundColor="#00416B"/>
+
+        <Label x:Name="lbResultado" Text="" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
     </StackLayout>
